@@ -1,0 +1,36 @@
+.App {
+  text-align:center;
+}
+
+Nav {
+  
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  min-height: 8vh;
+  background: white;
+  color: black;
+}
+
+Nav a {
+  float:right;
+  display: block;
+  color:aliceblue;
+  text-align: center;
+  padding: 14 px 16 px;
+  text-decoration: none;
+}
+
+Nav a:hover {
+
+  color: black;
+  
+}
+
+.nav-links {
+  width:40%;
+  display: flex;
+  justify-content: space-around;
+  align-items:center;
+  list-style: none;
+}
