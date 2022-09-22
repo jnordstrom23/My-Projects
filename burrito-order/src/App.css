@@ -1,0 +1,344 @@
+/*navigation bar*/
+
+
+ul.topnav {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: rgb(37, 37, 37);
+  border-radius: 5%;
+}
+
+ul.topnav li {float: left;}
+
+ul.topnav li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+ul.topnav li a:hover:not(.active) {background-color: rgba(159, 227, 12, 0.813);}
+
+ul.topnav li a.active {background-color:rgba(159, 227, 12, 0.813);}
+
+ul.topnav li.right {float: right;}
+
+@media screen and (max-width: 600px) {
+  ul.topnav li.right, 
+  ul.topnav li {float: none;}
+}
+
+/*Home Page*/
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 10px;
+}
+
+.column1 {
+  flex: 50%;
+  padding: 30px;
+  
+}
+
+.column2 {
+  flex: 50%;
+  padding: 30px;
+  line-height: 2;
+  
+}
+
+.column3 {
+  flex: 50%;
+  padding: 30px;
+}
+
+/* Responsive layout - makes the three columns stack on top of each other instead of next to each other on smaller screens (600px wide or less) */
+@media screen and (max-width: 800px) {
+  .row {
+    flex-direction: column;
+  }
+}
+
+.Cart {
+  width: 50px;
+  height: 40px;
+  border-radius: 25%;
+}
+
+.responsive {
+  position: sticky;
+  width: 100%;
+  max-width: 500px;
+  height: 100%;
+  border-radius:7%;
+
+}
+
+
+
+.footer {
+  padding-top: 3%;
+  left: 0;
+  position: sticky;
+  bottom: 0;
+  width: 100%;
+  background-color: white;
+  color: white;
+  text-align: center;
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing: border-box;
+}
+
+
+/*menu page*/
+
+.card-container{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  flex-wrap:wrap;
+  padding: 10px;
+
+}
+
+.card{
+  width: 250px;
+  height: auto;
+  position: relative;
+  background: gray;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items:center;
+  border-radius: 4px;
+  padding: 20px;
+  transition: all .3s eae-in;
+}
+
+.card > * {
+  padding: 10px;
+}
+
+.card .card-image{
+  height: 150px;
+  width: 150px;
+  border: 5px double rgba(159, 227, 12, 0.813);
+  border-radius: 50%;
+  background-position: center center;
+  background-size: cover;
+}
+
+.card .card-title{
+  padding: 20px 10px;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  text-shadow: 1px 0px 2px black
+}
+
+.card:nth-child(1) .card-image{
+  background-image: url(https://i.etsystatic.com/7867651/r/il/f8d868/1690141062/il_794xN.1690141062_lcp7.jpg)
+}
+
+.card:nth-child(2) .card-image{
+  background-image: url(https://i.etsystatic.com/7867651/r/il/13937d/1737615009/il_794xN.1737615009_s23j.jpg)
+}
+
+.card:nth-child(3) .card-image{
+  background-image: url(https://static.vecteezy.com/system/resources/thumbnails/005/246/725/small/kidney-beans-black-beans-in-cartoon-style-healthy-vegetarian-food-illustration-vector.jpg)
+}
+
+.card:nth-child(4) .card-image{
+  background-image: url(https://i.etsystatic.com/7434544/r/il/90d48c/1706017439/il_794xN.1706017439_fg44.jpg)
+}
+
+
+.card:hover{
+  background:  rgba(204, 7, 7, 0.418);
+  color: #fff;
+  box-shadow: 0px 0px 11px 5px #000000;
+}
+
+.card .card-text {
+  font-size: large;
+  margin-bottom: 15px;
+  font-style: bold;
+}
+
+button {
+    position: bottom;
+    top:50%;
+    background-color:black;
+    color: #fff;
+    border:none;
+    border-radius:10px;
+    font-size:larger;
+    
+  }
+
+  button:hover {
+    background: whitesmoke;
+    color: black;
+    box-shadow: 0px 0px 11px 5px #000000;
+  }
+
+/* cart page*/ 
+
+.cart-container{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  flex-wrap:wrap;
+  padding: 10px;
+
+}
+
+.cart{
+  width: 800px;
+  height: 100px;
+  position: relative;
+  background: gray;
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  align-items:left;
+  border-radius: 10px;
+  padding: 20px;
+  transition: all .3s eae-in;
+}
+
+.cart > * {
+  padding: 10px;
+}
+
+.cart .cart-image{
+  height: 50px;
+  width: 50px;
+  border: 5px double rgba(159, 227, 12, 0.813);
+  border-radius: 50%;
+  background-position: center center;
+  background-size: cover;
+  align-items: left;
+  margin-top: 6px;
+}
+
+.cart .cart-title{
+  padding: 20px 10px;
+  font-size: 1.0rem;
+  text-transform: uppercase;
+  text-shadow: 1px 0px 2px black;
+  margin-left: 10px;
+  margin-top: 5px;
+  
+}
+
+.cart:nth-child(1) .cart-image{
+  background-image: url(https://i.etsystatic.com/7867651/r/il/f8d868/1690141062/il_794xN.1690141062_lcp7.jpg)
+}
+
+.cart:nth-child(2) .cart-image{
+  background-image: url(https://i.etsystatic.com/7867651/r/il/13937d/1737615009/il_794xN.1737615009_s23j.jpg)
+}
+
+.cart:nth-child(3) .cart-image{
+  background-image: url(https://static.vecteezy.com/system/resources/thumbnails/005/246/725/small/kidney-beans-black-beans-in-cartoon-style-healthy-vegetarian-food-illustration-vector.jpg)
+}
+
+.cart:nth-child(4) .cart-image{
+  background-image: url(https://i.etsystatic.com/7434544/r/il/90d48c/1706017439/il_794xN.1706017439_fg44.jpg)
+}
+
+.cart:nth-child(5) .cart-image{
+  background-image: url(https://i.etsystatic.com/10919371/r/il/08e506/1529874052/il_1140xN.1529874052_1xc2.jpg)
+}
+
+
+.cart:hover{
+  background:  rgba(204, 7, 7, 0.418);
+  color: #fff;
+  box-shadow: 0px 0px 11px 5px #000000;
+}
+
+.cart .cart-text {
+  font-size: 20px;
+  margin-top:13px;
+  font-style: bold;
+}
+
+.button2 {
+  position: bottom;
+  top:50%;
+  background-color:black;
+  color: #fff;
+  border:none;
+  border-radius:10px;
+  font-size:larger;
+  height:50px;
+  width:50px ;
+  margin-left: 100px;
+  
+  
+}
+
+.button2:hover {
+  background: whitesmoke;
+  color: black;
+  box-shadow: 0px 0px 11px 5px #000000;
+}
+
+.counter{
+  font-size: 20px;
+  margin-top: 13px;
+
+}
+
+.button3 {
+  top:50%;
+  background-color:black;
+  color: #fff;
+  border:none;
+  border-radius:10px;
+  font-size:larger;
+  height:35px;
+  width:35px ;
+  margin-top: 15px;
+  
+  
+}
+
+.button3:hover {
+  background: whitesmoke;
+  color: black;
+  box-shadow: 0px 0px 11px 5px #000000;
+}
+
+.button4 {
+ 
+
+  background-color:black;
+  color: #fff;
+  border:none;
+  border-radius:10px;
+  font-size:larger;
+  height:35px;
+  width:35px ;
+  margin-top: 15px;
+  
+  
+}
+
+.button4:hover {
+  background: whitesmoke;
+  color: black;
+  box-shadow: 0px 0px 11px 5px #000000;
+}
