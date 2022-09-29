@@ -1,5 +1,9 @@
 /*navigation bar*/
 
+.Home {
+  border-radius: 50%;
+  height:50px
+}
 
 ul.topnav {
   list-style-type: none;
@@ -80,18 +84,6 @@ ul.topnav li.right {float: right;}
 }
 
 
-
-.footer {
-  padding-top: 3%;
-  left: 0;
-  position: sticky;
-  bottom: 0;
-  width: 100%;
-  background-color: white;
-  color: white;
-  text-align: center;
-}
-
 *{
   margin:0;
   padding:0;
@@ -112,7 +104,7 @@ ul.topnav li.right {float: right;}
 }
 
 .card{
-  width: 250px;
+  width: 325px;
   height: auto;
   position: relative;
   background: gray;
@@ -120,9 +112,9 @@ ul.topnav li.right {float: right;}
   flex-direction: column;
   justify-content: center;
   align-items:center;
-  border-radius: 4px;
+  border-radius: 10px;
   padding: 20px;
-  transition: all .3s eae-in;
+  transition: all .3s ease-in;
 }
 
 .card > * {
@@ -133,7 +125,7 @@ ul.topnav li.right {float: right;}
   height: 150px;
   width: 150px;
   border: 5px double rgba(159, 227, 12, 0.813);
-  border-radius: 50%;
+  border-radius: 10%;
   background-position: center center;
   background-size: cover;
 }
@@ -146,19 +138,19 @@ ul.topnav li.right {float: right;}
 }
 
 .card:nth-child(1) .card-image{
-  background-image: url(https://i.etsystatic.com/7867651/r/il/f8d868/1690141062/il_794xN.1690141062_lcp7.jpg)
+  background-image: url(https://media.istockphoto.com/photos/steak-burrito-picture-id117179410?k=20&m=117179410&s=612x612&w=0&h=X80Q0NbaUt0BSaSBgc1yh94_2yAj7nepdV3mPrWg28g=)
 }
 
 .card:nth-child(2) .card-image{
-  background-image: url(https://i.etsystatic.com/7867651/r/il/13937d/1737615009/il_794xN.1737615009_s23j.jpg)
+  background-image: url(https://olo-images-live.imgix.net/a8/a820054844064dba80cd6e85fc6e7048.png?auto=format%2Ccompress&q=60&cs=tinysrgb&w=528&h=352&fit=fill&fm=png32&bg=transparent&s=7443a997ac21337b39e0fa64228d1850)
 }
 
 .card:nth-child(3) .card-image{
-  background-image: url(https://static.vecteezy.com/system/resources/thumbnails/005/246/725/small/kidney-beans-black-beans-in-cartoon-style-healthy-vegetarian-food-illustration-vector.jpg)
+  background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSM4yR2ZTuGYnWhAfTgvZfwii9or7FIuJr5kA&usqp=CAU)
 }
 
 .card:nth-child(4) .card-image{
-  background-image: url(https://i.etsystatic.com/7434544/r/il/90d48c/1706017439/il_794xN.1706017439_fg44.jpg)
+  background-image: url(https://americanburrito.com/wp-content/uploads/2019/07/AmericanBurrito_097-1.jpg)
 }
 
 
@@ -197,9 +189,9 @@ button {
   display:flex;
   justify-content: center;
   align-items: center;
-  gap: 15px;
+  gap: 5px;
   flex-wrap:wrap;
-  padding: 10px;
+  padding: 5px;
 
 }
 
@@ -214,7 +206,7 @@ button {
   align-items:left;
   border-radius: 10px;
   padding: 20px;
-  transition: all .3s eae-in;
+  transition: all .3s ease-in;
 }
 
 .cart > * {
@@ -262,6 +254,10 @@ button {
   background-image: url(https://i.etsystatic.com/10919371/r/il/08e506/1529874052/il_1140xN.1529874052_1xc2.jpg)
 }
 
+.cart:nth-child(6) .cart-image{
+  background-image: url(https://i.etsystatic.com/28388479/r/il/eef3ad/2968602690/il_794xN.2968602690_k793.jpg)
+}
+
 
 .cart:hover{
   background:  rgba(204, 7, 7, 0.418);
@@ -286,8 +282,6 @@ button {
   height:50px;
   width:50px ;
   margin-left: 100px;
-  
-  
 }
 
 .button2:hover {
@@ -299,7 +293,12 @@ button {
 .counter{
   font-size: 20px;
   margin-top: 13px;
+}
 
+.counter2{
+  font-size: 20px;
+  margin-top: 13px;
+  margin-left:12px;
 }
 
 .button3 {
@@ -312,8 +311,6 @@ button {
   height:35px;
   width:35px ;
   margin-top: 15px;
-  
-  
 }
 
 .button3:hover {
@@ -323,8 +320,6 @@ button {
 }
 
 .button4 {
- 
-
   background-color:black;
   color: #fff;
   border:none;
@@ -333,8 +328,6 @@ button {
   height:35px;
   width:35px ;
   margin-top: 15px;
-  
-  
 }
 
 .button4:hover {
@@ -342,3 +335,160 @@ button {
   color: black;
   box-shadow: 0px 0px 11px 5px #000000;
 }
+
+.button5 {
+  background-color:rgba(159, 227, 12, 0.813);
+  color: black;
+  border:none;
+  border-radius:10px;
+  font-size: 18px;
+  height:35px;
+  width:120px ;
+  margin-top: 15px;
+  margin-left: 10px;
+}
+
+.button5:hover {
+  background: whitesmoke;
+  color: black;
+  box-shadow: 0px 0px 11px 5px #000000;
+}
+
+.button6 {
+  background-color:rgba(159, 227, 12, 0.813);
+  color: black;
+  border:none;
+  border-radius:10px;
+  font-size: 18px;
+  height:35px;
+  width:200px ;
+  margin-top: 15px;
+  margin-left: 10px;
+}
+
+.button6:hover {
+  background: whitesmoke;
+  color: black;
+  box-shadow: 0px 0px 11px 5px #000000;
+}
+
+.modal{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  flex-wrap:wrap;
+  padding: 5px;
+  margin-top:40px;
+}
+
+.modal-card{
+  width: 800px;
+  height: 500px;
+  position: center center;
+  background: gray;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items:center;
+  border-radius: 10px;
+  padding: 20px;
+  transition: all .3s ease-in;
+}
+
+.input-email{
+  width: 350px;
+  height: 40px;
+  background-color: white;
+  font-size: 20px;
+}
+
+.modal .modal-image{
+  height: 100px;
+  width: 200px;
+  border: 5px rgba(159, 227, 12, 0.813);
+  border-radius: 50%;
+  background-position: center center;
+  background-size: cover;
+  align-items: left;
+  margin-top: 0px;
+  padding-bottom: 10px;
+}
+
+.modal:nth-child(1) .modal-image{
+  background-image: url(http://burritobuilders.letseat.at/system/business_logos/17737/original/5aac016782ab663fdb9e.jpg?1384665485)
+}
+
+/*footer*/
+
+.footer {
+  padding-top: 0%;
+  left: 0;
+  position: sticky;
+  bottom: 0;
+  width: 100%;
+  background-color: black;
+  color: white;
+  text-align: center;
+  border-radius: 5px;
+
+}
+
+.header {
+  padding-bottom: 15px;
+  left: 0;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  background-color: white;
+  color: white;
+  text-align: center;
+  border-radius: 5px;
+  z-index: 999;
+}
+.header-image{
+  height: 75px;
+  width: 150px;
+  border: black;
+  border-radius: 5%;
+  margin-bottom: 0;
+  margin-top: 10px;
+}
+
+.button7 {
+  background-color:black;
+  color: white;
+  border:none;
+  border-radius:10px;
+  font-size: 18px;
+  height:35px;
+  width:120px ;
+  margin-top: 13px;
+  margin-bottom: 13px;
+}
+
+.button7:hover {
+  background: rgba(159, 227, 12, 0.813);
+  color: black;
+  box-shadow: 0px 0px 11px 5px #000000;
+}
+
+.button8 {
+  background-color:rgba(204, 7, 7, 0.418);;
+  color: white;
+  border:none;
+  border-radius:10px;
+  font-size: 18px;
+  height:35px;
+  width:120px ;
+  margin-top: 13px;
+  margin-bottom: 13px;
+}
+
+.button:hover {
+  background: rgba(159, 227, 12, 0.813);
+  color: black;
+  box-shadow: 0px 0px 11px 5px #000000;
+}
+
+
