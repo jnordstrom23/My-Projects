@@ -1,6 +1,6 @@
 
 import React from 'react'
-import { render } from '@testing-library/react';
+import axios from 'axios';
 import {useState} from 'react';
 import Modal from 'react-modal'
 
@@ -15,9 +15,7 @@ function Cart() {
   const[ChixPrice,setChixPrice]=useState(0);
   const[BeanPrice,setBeanPrice]=useState(0);
   const[PorkPrice,setPorkPrice]=useState(0);
-  
-  
-  
+
 
   const plusBeef = () => {
     setBeefCount(BeefCount+1)
@@ -80,12 +78,72 @@ function Cart() {
     
     const [value, setValue] = useState('');
   
-    const handleChange = (event) => {
-      setValue(event.target.value);
-    }
+    
 
     function fixedPlace(x) {
       return Number.parseFloat(x).toFixed(2);
+    }
+
+
+    class API2 extends React.Component {
+      constructor() {
+        super()
+        this.state = {email: null, emailcount:0}
+        this.state = {BeefCount:null}
+      }
+      
+     
+      
+  
+      onEmailChange(event) {
+        this.setState({...this.state, email: event.target.value})
+        this.setState({...this.state, BeefCount: event.target.value})
+      }
+
+      onBeefSubmit(event) {
+        
+      }
+      
+      
+  
+      data() {
+        const {email} = this.state
+        const {BeefCount} = this.state
+        var url = 'http://127.0.0.1:5000/data/' + email +BeefCount
+        axios.get(url).then((resp) => {
+            this.setState({...this.state, 
+                emailcount: resp.data['email count'], 
+                totalemailcount: resp.data['total email count'],
+
+            })
+        }).catch(error => {
+            console.log(error)
+        })
+    }
+    
+  
+      render() {
+        const {email, emailcount} = this.state
+        const {BeefCount} = this.state
+        return <div class="API">
+          <Modal isOpen={OpenModal} className="modal">
+            <div class= 'modal-card'>
+            <div class='modal-image'></div>
+            <br></br>
+            <input placeholder="Email"class='input-email'type='email' value={email} onChange={this.onEmailChange.bind(this)}/>
+            
+          <br></br>
+          {(emailcount > 0)} 
+          <p><span>Your Email: {email} </span></p>
+          <button onClick={this.data.bind(this) }class='button6' >SUBMIT EMAIL</button>
+          {(BeefCount)}
+           <button onClick={setOpenModalAsFalse}class='button6'>CANCEL</button>
+          <button onClick={Checkout}class='button9' >FINAL CHECKOUT</button>
+           
+            </div>
+        </Modal>
+        </div>
+      }
     }
 
    
@@ -147,20 +205,9 @@ function Cart() {
          
           
           <button onClick={setOpenModalAsTrue}class='button5'>CHECKOUT</button>
+          <API2/>
       
-        <Modal isOpen={OpenModal} className="modal">
-            <div class= 'modal-card'>
-            <div class='modal-image'></div>
-            <br></br>
-            <h1>FINAL CHECKOUT</h1>
-            <br></br>
-            <p>Enter E-mail to Complete Order:</p>
-            <br></br>
-            <input class='input-email'type='email'value={value} onChange={handleChange}/>
-            <button disabled = {!value} onClick={Checkout} class='button6'>COMPLETE ORDER</button>
-            <button onClick={setOpenModalAsFalse}class='button6'>CANCEL ORDER</button>
-            </div>
-        </Modal>
+       
          
       </div>
      

@@ -5,6 +5,10 @@ import{useNavigate} from'react-router-dom';
 
 function Footer() {
 
+  
+  
+ 
+
   const navigate = useNavigate();
 
     const navigateCart = () => {
@@ -24,18 +28,19 @@ const[OpenModal, setOpenModal] = useState(false);
       setOpenModal(false)
   };
   
-  const [value, setValue] = useState('');
-
 
   class API extends React.Component {
     constructor() {
       super()
       this.state = {user: null, usercount:0, totalcount:0}
     }
+    
+    
 
-    onLoginChange(e) {
-      this.setState({...this.state, user: e.target.value})
+    onLoginChange(event) {
+      this.setState({...this.state, user: event.target.value})
     }
+    
 
     login() {
       const {user} = this.state
@@ -60,10 +65,13 @@ const[OpenModal, setOpenModal] = useState(false);
           <div class= 'modal-card'>
           <div class='modal-image'></div>
           <br></br>
-          <input placeholder="To Login: Enter Your Email Address"class='input-email'type='email' value={user} onChange={this.onLoginChange.bind(this)}/>
+          <input placeholder="Username"class='input-email'type='email' value={user} onChange={this.onLoginChange.bind(this)}/>
+          <input placeholder="Password" class='input-email'type='password'></input>
+        <br></br>
         {(usercount > 0)} 
-        <p><span>{user} count: {usercount}</span></p>
-        <p><span>total count: {totalcount}</span></p>
+        <p><span>{user} Logins: {usercount} </span></p>
+        <br></br>
+        <p><span>Total User Logins: {totalcount}</span></p>
           <button onClick={this.login.bind(this)}class='button6' >LOGIN</button>
           <button onClick={setOpenModalAsFalse}class='button6'>CANCEL</button>
           </div>
