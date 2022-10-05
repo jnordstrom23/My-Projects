@@ -30,49 +30,23 @@ const[OpenModal, setOpenModal] = useState(false);
   
 
   class API extends React.Component {
-    constructor() {
-      super()
-      this.state = {user: null, usercount:0, totalcount:0}
-    }
     
-    
-
-    onLoginChange(event) {
-      this.setState({...this.state, user: event.target.value})
-    }
-    
-
-    login() {
-      const {user} = this.state
-      var url = 'http://127.0.0.1:5000/login/' + user
-      axios.get(url).then((resp) => {
-          this.setState({...this.state, 
-              usercount: resp.data['user count'], 
-              totalcount: resp.data['total count']
-          })
-      }).catch(error => {
-          console.log(error)
-      })
-  }
-  
-
-  
-
     render() {
-      const {user, usercount, totalcount} = this.state
+      
       return <div class="API">
         <Modal isOpen={OpenModal} className="modal">
           <div class= 'modal-card'>
           <div class='modal-image'></div>
           <br></br>
-          <input placeholder="Username"class='input-email'type='email' value={user} onChange={this.onLoginChange.bind(this)}/>
-          <input placeholder="Password" class='input-email'type='password'></input>
-        <br></br>
-        {(usercount > 0)} 
-        <p><span>{user} Logins: {usercount} </span></p>
-        <br></br>
-        <p><span>Total User Logins: {totalcount}</span></p>
-          <button onClick={this.login.bind(this)}class='button6' >LOGIN</button>
+          <form action= 'http://localhost:5000/login' method='post'>
+          <input type="text" name="username" id="username" class='input-email' placeholder="Username" required />
+          <br></br>
+          <input type="password" name="password" id="password" class='input-email' placeholder="Password" required />
+          <br></br>
+          <button type="submit" value="Submit" class= 'button10'>SUBMIT</button>
+          </form>
+          
+           
           <button onClick={setOpenModalAsFalse}class='button6'>CANCEL</button>
           </div>
       </Modal>

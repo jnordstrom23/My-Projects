@@ -382,27 +382,51 @@ button {
   margin-top:40px;
 }
 
+.modal2{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  flex-wrap:wrap;
+  padding: 5px;
+  margin-top:-15px;
+}
+
 .modal-card{
   width: 800px;
-  height: 500px;
-  position: center center;
+  height: 800px;
+  overflow:scroll;
   background: gray;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items:center;
   border-radius: 10px;
-  padding: 20px;
   transition: all .3s ease-in;
 }
 
-.input-email{
-  width: 350px;
-  height: 40px;
-  background-color: white;
-  font-size: 20px;
-  margin-bottom: 5px;
+.modal-card .cart-title{
+  color: white;
+  font-size: 15px;
+  text-transform: uppercase;
+  text-shadow: 1px 0px 2px white;
+  padding-bottom: 5px;
+  padding-top: 5px;
+  
 }
+
+.modal-card .cart-text {
+  font-size: 15px;
+  
+  font-style: bold, italic;
+}
+.modal-card .cart-text2 {
+  margin-top: 5px;
+  font-size: 22px;
+  font-style: bold, italic;
+}
+
+
 
 .modal .modal-image{
   height: 100px;
@@ -414,6 +438,7 @@ button {
   align-items: left;
   margin-top: 30px;
   padding-bottom: 10px;
+  margin-bottom: 10px;
 }
 
 .modal:nth-child(1) .modal-image{
@@ -511,3 +536,204 @@ button {
   box-shadow: 0px 0px 11px 5px #000000;
 }
 
+.button10 {
+  background-color:rgba(159, 227, 12, 0.813);
+  color: black;
+  border:none;
+  border-radius:10px;
+  font-size: 18px;
+  height:35px;
+  width:200px ;
+  margin-top: 10px;
+  margin-left: 80px;
+}
+
+.button10:hover {
+  background: whitesmoke;
+  color: black;
+  box-shadow: 0px 0px 11px 5px #000000;
+}
+
+.button11 {
+  background-color:rgba(159, 227, 12, 0.813);
+  color: black;
+  border:none;
+  border-radius:10px;
+  font-size: 18px;
+  height:35px;
+  width:200px ;
+  margin-top: 5px;
+  margin-left: 10px;
+}
+
+.button11:hover {
+  background: whitesmoke;
+  color: black;
+  box-shadow: 0px 0px 11px 5px #000000;
+}
+
+.input-email{
+  width: 350px;
+  height: 25px;
+  background-color: white;
+  font-size: 16px;
+  margin-bottom: 3px;
+}
+
+.input-email2{
+  width: 350px;
+  height: 25px;
+  background-color: white;
+  font-size: 16px;
+}
+.input-name{
+  width: 174px;
+  height: 25px;
+  background-color: white;
+  font-size: 16px;
+  margin-bottom: 3px;
+  padding-left: 4px;
+  margin-left: 1px;
+}
+
+.input-cc{
+  width: 200px;
+  height: 25px;
+  background-color: white;
+  font-size: 16px;
+  margin-bottom: 3px;
+  padding-left: 4px;
+  
+}
+
+.input-cvv{
+  width: 150px;
+  height: 25px;
+  background-color: white;
+  font-size: 16px;
+  margin-bottom: 3px;
+  padding-left: 4px;
+}
+.input-city{
+  width: 175px;
+  height: 25px;
+  background-color: white;
+  font-size: 16px;
+  margin-bottom: 3px;
+  padding-left: 4px;
+}
+.input-state{
+  width: 175px;
+  height: 25px;
+  background-color: white;
+  font-size: 16px;
+  margin-bottom: 3px;
+  padding-left: 4px;
+}
+.input-zipcode{
+  width: 100px;
+  height: 25px;
+  background-color: white;
+  font-size: 16px;
+  margin-bottom: 3px;
+  padding-left: 4px;
+}
+
+
+.form{
+  width: 350px;
+  height: 250px;
+  background: gray;
+  flex-direction: column;
+  align-items:center;
+  transition: all .3s ease-in;
+}
+
+.label{
+  font-size: 16px;
+  padding-left: 15px;
+}
+
+.cclogo{
+  height: 50px;
+  width: 100px;
+  border: whitesmoke;
+  border-radius: 3%;
+  padding-bottom: 10px;
+  padding-top: 7px;
+}
+/*Complete*/
+
+.complete-container{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  flex-wrap:wrap;
+  padding: 10px;
+
+}
+
+.complete-card{
+  width: 400px;
+  height: auto;
+  position: relative;
+  background: gray;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items:center;
+  border-radius: 10px;
+  padding: 20px;
+  transition: all .3s ease-in;
+}
+
+.complete-card > * {
+  padding: 10px;
+}
+
+.complete-card .complete-image{
+  height: 300px;
+  width: 300px;
+  border: 5px double rgba(159, 227, 12, 0.813);
+  border-radius: 25%;
+  background-position: center center;
+  background-size: cover;
+}
+
+.complete-card .complete-card-title{
+  padding: 20px 10px;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  text-shadow: 1px 0px 2px black
+}
+
+.complete-card:nth-child(1) .complete-image{
+  background-image: url(https://images.vice.com/munchies/wp_upload/burrito-man-2.jpg?resize=1000:*)
+}
+
+
+
+
+.complete-card:hover{
+  background:  rgba(204, 7, 7, 0.418);
+  color: #fff;
+  box-shadow: 0px 0px 11px 5px #000000;
+}
+
+.complete-card .complete-card-text {
+  font-size: large;
+  margin-bottom: 15px;
+  font-style: bold;
+}
+
+button {
+    position: bottom;
+    top:50%;
+    background-color:black;
+    color: #fff;
+    border:none;
+    border-radius:10px;
+    font-size:larger;
+    
+  }

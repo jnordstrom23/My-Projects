@@ -26,11 +26,7 @@ function Home() {
           If you like burritos, we know you'll love Burrito Builders! 
         </p>
 
-        <form action= 'http://localhost:5000/login' method='post'>
-        <input type="text" name="username" id="username" placeholder="username"  />
-        <input type="password" name="password" id="password" placeholder="password"  />
-        <input type="submit" value="Submit" />
-      </form>
+       
   
 
 

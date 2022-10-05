@@ -7,6 +7,7 @@ import Home from './Components/Home';
 import Cart from './Components/Cart';
 import Order from './Components/Order';
 import Header from './Components/Header'
+import Complete from './Components/Complete'
 
 
 
@@ -20,6 +21,7 @@ function App() {
           <Route path ="/" element={<Home/>} />
           <Route path ="/Menu" element={<Order/>} />
           <Route path ="/Cart" element={<Cart/>} />
+          <Route path ="/Complete" element={<Complete/>} />
         </Routes>
       <Footer/>
     </Router>
