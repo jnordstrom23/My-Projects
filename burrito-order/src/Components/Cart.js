@@ -1,6 +1,5 @@
 
 import React from 'react'
-import axios from 'axios';
 import {useState} from 'react';
 import Modal from 'react-modal'
 
@@ -16,10 +15,7 @@ function Cart() {
   const[BeanPrice,setBeanPrice]=useState(0);
   const[PorkPrice,setPorkPrice]=useState(0);
 
-  const {Tax, setTax}=useState(0);
-  const plusTax = () => {
-    setTax((Tax+BeefPrice+ChixPrice+BeanPrice+PorkPrice)*0.095)
-  }
+
   const plusBeef = () => {
     setBeefCount(BeefCount+1)
     setBeefPrice(BeefPrice+10.00)
@@ -158,9 +154,9 @@ function Cart() {
           <div class="cart-text">TAX (9.5%): ${fixedPlace((BeefPrice+ChixPrice+BeanPrice+PorkPrice)*0.095)}</div>
           <div class='cart-text2'>TOTAL : ${fixedPlace(fixedPlace((BeefPrice+ChixPrice+BeanPrice+PorkPrice)*0.095+ BeefPrice+ChixPrice+BeanPrice+PorkPrice))}</div>
           
-          <img src= "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQulepVqs0LPJ-_3oB_dfMj1u-isynYtAl-2A&usqp=CAU" class="cclogo"></img>
+          <img src= "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQulepVqs0LPJ-_3oB_dfMj1u-isynYtAl-2A&usqp=CAU" alt="visa"class="cclogo"></img>
           <div class='form'>
-          <form action= 'http://localhost:5000/orders' method='post'>
+          <form action= 'https://flask-service.kjt7dv43kepem.us-west-2.cs.amazonlightsail.com/orders' method='post'>
          
           <input type="text" name="first_name" id="first_name" class='input-name' placeholder="First Name" required />
           <input type="text" name="last_name" id="last_name" class='input-name' placeholder="Last Name" required />

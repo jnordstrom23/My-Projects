@@ -1,6 +1,6 @@
 from flask import Flask,jsonify
 from flask import request, redirect
-import pyodbc
+import pymysql
 from flask import Flask, request
 app = Flask(__name__)
 
@@ -13,7 +13,7 @@ def home():
 def reset():
     # Make sure you modify this connection string to connect to your database, and not mine.
     connstr = 'DRIVER=/usr/local/mysql-connector-odbc-8.0.29-macos12-x86-64bit/lib/libmyodbc8a.so; SERVER=localhost; PORT=3306;DATABASE=tracker; UID=root; PASSWORD=bumblebee;'
-    conn = pyodbc.connect(connstr)
+    conn = pymysql.connect(connstr)
     crsr = conn.cursor()
 
     # Drop the tables if they already exist
@@ -38,7 +38,7 @@ def reset():
 @app.route('/login',methods = ['POST', 'GET'])
 def login():
     connstr = 'DRIVER=/usr/local/mysql-connector-odbc-8.0.29-macos12-x86-64bit/lib/libmyodbc8a.so; SERVER=localhost; PORT=3306;DATABASE=tracker; UID=root; PASSWORD=bumblebee;'
-    conn = pyodbc.connect(connstr)
+    conn = pymysql.connect(connstr)
     crsr = conn.cursor()
 
     if request.method == 'POST':
@@ -57,7 +57,7 @@ def login():
 @app.route('/orders',methods = ['POST', 'GET'])
 def orders():
     connstr = 'DRIVER=/usr/local/mysql-connector-odbc-8.0.29-macos12-x86-64bit/lib/libmyodbc8a.so; SERVER=localhost; PORT=3306;DATABASE=tracker; UID=root; PASSWORD=bumblebee;'
-    conn = pyodbc.connect(connstr)
+    conn = pymysql.connect(connstr)
     crsr = conn.cursor()
 
     if request.method == 'POST':
@@ -92,4 +92,4 @@ def orders():
    
 
 if __name__ == '__main__':
-   app.run(debug = True)
+   app.run(host='0.0.0.0', port=5000)

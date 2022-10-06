@@ -1,5 +1,4 @@
 import React, {useState}from 'react';
-import axios from 'axios';
 import Modal from 'react-modal';
 import{useNavigate} from'react-router-dom';
 
@@ -36,9 +35,9 @@ const[OpenModal, setOpenModal] = useState(false);
       return <div class="API">
         <Modal isOpen={OpenModal} className="modal">
           <div class= 'modal-card'>
-          <div class='modal-image'></div>
+          <img src=" https://www.nicepng.com/png/detail/302-3026464_png-file-svg-login-member-icon-png.png" class="login-img"></img>
           <br></br>
-          <form action= 'http://localhost:5000/login' method='post'>
+          <form action= 'https://flask-service.kjt7dv43kepem.us-west-2.cs.amazonlightsail.com/login' method='post'>
           <input type="text" name="username" id="username" class='input-email' placeholder="Username" required />
           <br></br>
           <input type="password" name="password" id="password" class='input-email' placeholder="Password" required />
