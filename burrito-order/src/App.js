@@ -1,5 +1,5 @@
 import React from 'react';
-import{BrowserRouter as HashRouter, Route, Routes} from'react-router-dom'
+import{HashRouter, Route, Routes} from'react-router-dom'
 import './App.css';
 import Navigation from './Components/Navigation';
 import Footer from './Components/Footer';
@@ -17,11 +17,14 @@ function App() {
     <HashRouter>
       <Header/>
       <Navigation/>
+      <Routes>
+          <Route path ="/Home" element={<Home/>} />
+        </Routes>
         <Routes>
-          <Route path ="/" element={<Home/>} />
           <Route path ="/Menu" element={<Order/>} />
           <Route path ="/Cart" element={<Cart/>} />
           <Route path ="/Complete" element={<Complete/>} />
+          
         </Routes>
       <Footer/>
     </HashRouter>

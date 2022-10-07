@@ -6,7 +6,7 @@ function Navigation() {
       <div >
         <h1>
           <ul class="topnav">
-    <li><Link to="/">
+    <li><Link to="/Home">
       <img src="https://static.vecteezy.com/system/resources/thumbnails/000/568/450/small/vector60-1781-01.jpg" 
         class="Home"
           alt="Home"/>
