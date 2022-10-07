@@ -2,9 +2,11 @@ from flask import Flask,jsonify
 from flask import request, redirect
 import pymysql
 from flask import Flask, request
+from flask_cors import CORS
 
 
 app = Flask(__name__)
+CORS(app)
 
 @app.route('/')
 def home():
@@ -15,7 +17,7 @@ def home():
 def reset():
     # Make sure you modify this connection string to connect to your database, and not mine.
     conn = pymysql.connect(host='tracker2.cn8wiweortbk.us-west-2.rds.amazonaws.com',
-        user="admin", password="Jeffropuff7!",
+        user="admin", password="WhitworthPirates2022",
         port=3306, database="tracker")
     crsr = conn.cursor()
 
@@ -38,10 +40,10 @@ def reset():
 
     return 'Reset Successful'
 
-@app.route('/login',methods = ['POST', 'GET'])
+@app.route('/login',methods = ['POST'])
 def login():
     conn = pymysql.connect(host='tracker2.cn8wiweortbk.us-west-2.rds.amazonaws.com',
-        user="admin", password="Jeffropuff7!",
+        user="admin", password="WhitworthPirates2022",
         port=3306, database="tracker")
     crsr = conn.cursor()
 
@@ -58,10 +60,10 @@ def login():
       return redirect ("https://www.burrito-ordering-app-project.com/#/")
 
 
-@app.route('/orders',methods = ['POST', 'GET'])
+@app.route('/orders',methods = ['POST'])
 def orders():
     conn = pymysql.connect(host='tracker2.cn8wiweortbk.us-west-2.rds.amazonaws.com',
-        user="admin", password="Jeffropuff7!",
+        user="admin", password="WhitworthPirates2022",
         port=3306, database="tracker")
     crsr = conn.cursor()
 

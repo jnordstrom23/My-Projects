@@ -1,4 +1,4 @@
 flask
-flask-cors
+flask_cors
 pymysql
 python-dotenv
