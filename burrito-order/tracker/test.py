@@ -3,6 +3,7 @@ from flask import request, redirect
 import pymysql
 from flask import Flask, request
 from flask_cors import CORS
+import os
 
 
 app = Flask(__name__)
@@ -40,7 +41,7 @@ def reset():
 
     return 'Reset Successful'
 
-@app.route('/login',methods = ['POST'])
+@app.route('/login',methods = ['GET','POST'])
 def login():
     conn = pymysql.connect(host='tracker2.cn8wiweortbk.us-west-2.rds.amazonaws.com',
         user="admin", password="WhitworthPirates2022",
@@ -60,7 +61,7 @@ def login():
       return redirect ("https://www.burrito-ordering-app-project.com/#/")
 
 
-@app.route('/orders',methods = ['POST'])
+@app.route('/orders',methods = ['GET','POST'])
 def orders():
     conn = pymysql.connect(host='tracker2.cn8wiweortbk.us-west-2.rds.amazonaws.com',
         user="admin", password="WhitworthPirates2022",
