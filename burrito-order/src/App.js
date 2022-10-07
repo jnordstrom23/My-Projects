@@ -1,5 +1,5 @@
 import React from 'react';
-import{BrowserRouter as Router, Route, Routes} from'react-router-dom'
+import{BrowserRouter as HashRouter, Route, Routes} from'react-router-dom'
 import './App.css';
 import Navigation from './Components/Navigation';
 import Footer from './Components/Footer';
@@ -14,7 +14,7 @@ import Complete from './Components/Complete'
 function App() {
 
   return (
-    <Router>
+    <HashRouter>
       <Header/>
       <Navigation/>
         <Routes>
@@ -24,7 +24,7 @@ function App() {
           <Route path ="/Complete" element={<Complete/>} />
         </Routes>
       <Footer/>
-    </Router>
+    </HashRouter>
   );
 }
 
