@@ -4,10 +4,6 @@ import{useNavigate} from'react-router-dom';
 
 function Footer() {
 
-  
-  
- 
-
   const navigate = useNavigate();
 
     const navigateCart = () => {

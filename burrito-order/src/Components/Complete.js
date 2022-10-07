@@ -3,11 +3,6 @@ import React from 'react';
 
 function Complete() {
 
-
-    
-
-
-
     return (
        
         <div class="complete-container">

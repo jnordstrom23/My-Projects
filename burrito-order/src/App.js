@@ -18,13 +18,12 @@ function App() {
       <Header/>
       <Navigation/>
       <Routes>
-          <Route path ="/Home" element={<Home/>} />
-        </Routes>
-        <Routes>
+          <Route path ="/" element={<Home/>} />
+      </Routes>
+      <Routes>
           <Route path ="/Menu" element={<Order/>} />
           <Route path ="/Cart" element={<Cart/>} />
           <Route path ="/Complete" element={<Complete/>} />
-          
         </Routes>
       <Footer/>
     </HashRouter>
