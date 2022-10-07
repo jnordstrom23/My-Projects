@@ -51,7 +51,7 @@ def login():
       
       conn.commit()
       crsr.close()
-      return redirect ("http://127.0.0.1:3000/")
+      return redirect ("https://www.burrito-ordering-app-project.com/#/")
 
 
 @app.route('/orders',methods = ['POST', 'GET'])
@@ -86,7 +86,7 @@ def orders():
         crsr.execute('insert into Customer_Data (first_name, last_name,credit_card,CVV,ExpDate,Address,City,state,zipcode,Email) values (\'' + first_name + '\',\'' + last_name + '\',\'' + credit_card + '\',\'' + CVV + '\',\'' + ExpDate + '\',\'' + Address + '\',\'' + City + '\',\'' + state + '\',\'' + zipcode + '\',\'' + Email + '\' )' )
         conn.commit()
         crsr.close()
-        return redirect ("http://127.0.0.1:3000/Complete")
+        return redirect ("https://www.burrito-ordering-app-project.com/#/Complete")
 
       
    
