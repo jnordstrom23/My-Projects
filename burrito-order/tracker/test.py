@@ -2,6 +2,9 @@ from flask import Flask,jsonify
 from flask import request, redirect
 import pymysql
 from flask import Flask, request
+import os
+
+
 app = Flask(__name__)
 
 @app.route('/')
