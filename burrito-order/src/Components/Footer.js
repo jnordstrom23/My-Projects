@@ -33,7 +33,7 @@ const[OpenModal, setOpenModal] = useState(false);
           <div class= 'modal-card'>
           <img src=" https://www.nicepng.com/png/detail/302-3026464_png-file-svg-login-member-icon-png.png" class="login-img"></img>
           <br></br>
-          <form action= "https://flask-burrito-app-service.kjt7dv43kepem.us-west-2.cs.amazonlightsail.com//login" methods='post'>
+          <form action= "https://burrito-app-service.kjt7dv43kepem.us-west-2.cs.amazonlightsail.com/login" methods='post'>
           <input type="text" name="username" id="username" class='input-email' placeholder="Username" required />
           <br></br>
           <input type="password" name="password" id="password" class='input-email' placeholder="Password" required />
