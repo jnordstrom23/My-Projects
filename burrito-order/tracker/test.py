@@ -1,3 +1,4 @@
+from urllib.request import urlopen
 from flask import Flask,jsonify
 from flask import request, redirect
 import pymysql
@@ -37,8 +38,6 @@ def reset():
     sql = 'CREATE TABLE `tracker`.`Customer_Data` (`id` INT NOT NULL AUTO_INCREMENT,`first_name` VARCHAR(255) NULL,`last_name` VARCHAR(255) NULL,`credit_card` VARCHAR(255) NULL,`CVV` VARCHAR(255) NULL,`ExpDate` VARCHAR(255) NULL,`Address` VARCHAR(255) NULL,`City` VARCHAR(255) NULL,`state` VARCHAR(255) NULL,`zipcode` VARCHAR(255) NULL,`Email` VARCHAR(255) NULL,  PRIMARY KEY (`id`));'
     crsr.execute(sql)
     
-   
-
     return 'Reset Successful'
 
 @app.route('/login',methods = ['GET','POST'])
@@ -47,6 +46,9 @@ def login():
         user="admin", password="WhitworthPirates2022",
         port=3306, database="tracker")
     crsr = conn.cursor()
+
+    if request.method == 'GET':   
+        return redirect  ("https://www.burrito-ordering-app-project.com/#/")
 
     if request.method == 'POST':
       username = request.form['username']
@@ -58,7 +60,7 @@ def login():
       
       conn.commit()
       crsr.close()
-      return redirect ("https://www.burrito-ordering-app-project.com/#/")
+      return redirect  ("https://www.burrito-ordering-app-project.com/#/")
 
 
 @app.route('/orders',methods = ['GET','POST'])
@@ -67,6 +69,9 @@ def orders():
         user="admin", password="WhitworthPirates2022",
         port=3306, database="tracker")
     crsr = conn.cursor()
+
+    if request.method == 'GET':   
+        return redirect  ("https://www.burrito-ordering-app-project.com/#/")
 
     if request.method == 'POST':
         first_name = request.form['first_name']
