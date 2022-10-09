@@ -2,7 +2,7 @@
 import React from 'react';
 import{useNavigate} from'react-router-dom'
 
-function Order() {
+function Menu() {
 
     const navigate = useNavigate();
 
@@ -46,4 +46,4 @@ function Order() {
     );
   }
   
-  export default Order;
+  export default Menu;

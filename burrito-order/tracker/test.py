@@ -1,4 +1,3 @@
-from email.mime import application
 from urllib.request import urlopen
 from flask import Flask,jsonify
 from flask import request, redirect
@@ -8,7 +7,7 @@ from flask_cors import CORS
 import os
 
 
-application = app = Flask(__name__)
+app = Flask(__name__)
 CORS(app)
 
 @app.route('/')
@@ -72,11 +71,12 @@ def orders():
     crsr = conn.cursor()
 
     if request.method == 'GET':   
-        return redirect  ("https://www.burrito-ordering-app-project.com/#/Complete")
+        return redirect  ("https://www.burrito-ordering-app-project.com/#/")
 
     if request.method == 'POST':
         first_name = request.form['first_name']
         last_name = request.form['last_name']
+       #start from here and then address execute
         credit_card = request.form['credit_card']
         CVV = request.form['CVV']
         ExpDate = request.form['ExpDate']
@@ -105,4 +105,4 @@ def orders():
    
 
 if __name__ == '__main__':
-   application.run(host='0.0.0.0', port=5000)
+   app.run(host='0.0.0.0', port=5000)
