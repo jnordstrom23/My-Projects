@@ -156,7 +156,7 @@ function Cart() {
           
           <img src= "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQulepVqs0LPJ-_3oB_dfMj1u-isynYtAl-2A&usqp=CAU" alt="visa"class="cclogo"></img>
           <div class='form'>
-          <form action= "http://localhost:5000/orders" method='post'>
+          <form action= "https://flask-order-app-service.kjt7dv43kepem.us-west-2.cs.amazonlightsail.com/orders" method='post'>
          
           <input type="text" name="first_name" id="first_name" class='input-name' placeholder="First Name" required />
           <input type="text" name="last_name" id="last_name" class='input-name' placeholder="Last Name" required />

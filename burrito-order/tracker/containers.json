@@ -1,6 +1,6 @@
 {
     "flask": {
-        "image": ":burrito-app-service.flask-container.8",
+        "image": ":flask-order-app-service.flask-container.9",
         "ports": {
             "5000": "HTTP"
         }

@@ -1,10 +1,10 @@
-from urllib.request import urlopen
+
 from flask import Flask,jsonify
 from flask import request, redirect
 import pymysql
 from flask import Flask, request
 from flask_cors import CORS
-import os
+
 
 
 app = Flask(__name__)
@@ -46,9 +46,11 @@ def login():
         user="admin", password="WhitworthPirates2022",
         port=3306, database="tracker")
     crsr = conn.cursor()
-
+    
     if request.method == 'GET':   
-        return redirect  ("https://www.burrito-ordering-app-project.com/#/")
+        welcome = {"Welcome" : "Customers"}
+        return jsonify (welcome)
+    
 
     if request.method == 'POST':
       username = request.form['username']
@@ -61,6 +63,11 @@ def login():
       conn.commit()
       crsr.close()
       return redirect  ("https://www.burrito-ordering-app-project.com/#/")
+
+    try: 
+        return jsonify({'err': 'not logged in'})
+    except Exception as ex:
+        return({'err': str(ex)})
 
 
 @app.route('/orders',methods = ['GET','POST'])
@@ -101,7 +108,10 @@ def orders():
         crsr.close()
         return redirect ("https://www.burrito-ordering-app-project.com/#/Complete")
 
-      
+    try: 
+        return jsonify({'err': 'not ordered'})
+    except Exception as ex:
+            return({'err': str(ex)})
    
 
 if __name__ == '__main__':
