@@ -9,7 +9,7 @@ function Home() {
       <div class="column1">
         <h2>
           <img 
-          src = "https://scontent-sea1-1.xx.fbcdn.net/v/t1.6435-9/119451857_2393092217650966_8520427843661903740_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=a26aad&_nc_ohc=khJcBFxsfMsAX8qQlnU&_nc_ht=scontent-sea1-1.xx&oh=00_AT_bm3hytMz_2G0E0XyKmnQ-vhjdGwaw1AXiHJazfQJ0ag&oe=634D34A7" 
+          src = "https://media.istockphoto.com/photos/mexican-rice-and-chorizo-sausage-wrap-picture-id1313361282?k=20&m=1313361282&s=612x612&w=0&h=TEt2xdGkFu7jXn3l8pmg743NSQujZuhT14B0MR_3B1o=" 
           alt = 'beautiful burrito'
           class="responsive"></img>
         </h2>

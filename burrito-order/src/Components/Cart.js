@@ -14,6 +14,9 @@ function Cart() {
   const[ChixPrice,setChixPrice]=useState(0);
   const[BeanPrice,setBeanPrice]=useState(0);
   const[PorkPrice,setPorkPrice]=useState(0);
+  
+
+
 
 
   const plusBeef = () => {
@@ -52,18 +55,18 @@ function Cart() {
     setPorkPrice(PorkPrice-11.00)
   }
 
-  const Checkout = () => {
-    setBeefCount(BeefCount*0)
-    setBeefPrice(BeefPrice*0)
-    setChixCount(ChixCount*0)
-    setChixPrice(ChixPrice*0)
-    setBeanCount(BeanCount*0)
-    setBeanPrice(BeanPrice*0)
-    setPorkCount(PorkCount*0)
-    setPorkPrice(PorkPrice*0)
-    setOpenModal(false)
-    setValue("")
-  }
+  //const Checkout = () => {
+   // setBeefCount(BeefCount*0)
+   // setBeefPrice(BeefPrice*0)
+    //setChixCount(ChixCount*0)
+   // setChixPrice(ChixPrice*0)
+   // setBeanCount(BeanCount*0)
+    //setBeanPrice(BeanPrice*0)
+    //setPorkCount(PorkCount*0)
+    //setPorkPrice(PorkPrice*0)
+    //setOpenModal(false)
+    //setValue("")
+  //}
   
   const[OpenModal, setOpenModal] = useState(false);
 
@@ -75,7 +78,7 @@ function Cart() {
         setOpenModal(false)
     };
     
-    const [value, setValue] = useState('');
+   
   
     
 
@@ -162,7 +165,7 @@ function Cart() {
           <input type="text" name="last_name" id="last_name" class='input-name' placeholder="Last Name" required />
           <input type="text" name="credit_card" id="credit_card" class='input-cc' placeholder="Credit Card #" required />
           <input type="text" name="CVV" id="CVV" class='input-cvv' placeholder="CVV" required />
-          <input type="month" name="ExpDate" id="ExpDate" class='input-email' placeholder="Exp Date" required />
+          <label class='label'> Card Expiry Date :   </label><input type="month" name="ExpDate" id="ExpDate" class='input-cc' placeholder="Exp Date" required />
           <input type="text" name="Address" id="Address" class='input-email' placeholder="Address" required />
           <input type="text" name="City" id="City" class='input-city' placeholder="City" required />
           
@@ -235,7 +238,7 @@ function Cart() {
                 <option value="WY">Wyoming</option>
             </select>
             <input type="text" name="zipcode" id="zipcode" class='input-zipcode' placeholder="Zipcode" required />
-            <label class='label'>Delivery: Same as Above  </label><input type="checkbox"></input>
+            <label class='label'>Delivery : Same as Above  </label><input type="checkbox"></input>
           <input type="text" name="Email" id="Email" class='input-email2' placeholder="Email" required />
 
           <input type="hidden" name="beef" id="beef" value={BeefCount} />
@@ -245,7 +248,7 @@ function Cart() {
           <input type="hidden" name="tax" id="tax" value={fixedPlace((BeefPrice+ChixPrice+BeanPrice+PorkPrice)*0.095)} />
           <input type="hidden" name="total_sale" id="total_sale" value={fixedPlace((BeefPrice+ChixPrice+BeanPrice+PorkPrice)*0.095+ BeefPrice+ChixPrice+BeanPrice+PorkPrice)} />
 
-          <button type="submit" value="Submit" class= 'button10'>SUBMIT</button>
+          <button disabled = {PorkCount+BeefCount+ChixCount+BeanCount===0} type="submit" value="Submit" class= 'button10'>SUBMIT</button>
           </form>
           </div>
            
