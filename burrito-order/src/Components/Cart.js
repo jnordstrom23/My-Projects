@@ -1,7 +1,10 @@
 
 import React from 'react'
 import {useState} from 'react';
+import { useNavigate } from 'react-router-dom';
 import Modal from 'react-modal'
+import db from "./firebase"
+import firebase from "firebase/compat/app"
 
 function Cart() {
 
@@ -15,9 +18,6 @@ function Cart() {
   const[BeanPrice,setBeanPrice]=useState(0);
   const[PorkPrice,setPorkPrice]=useState(0);
   
-
-
-
 
   const plusBeef = () => {
     setBeefCount(BeefCount+1)
@@ -78,13 +78,39 @@ function Cart() {
         setOpenModal(false)
     };
     
-   
-  
-    
 
     function fixedPlace(x) {
       return Number.parseFloat(x).toFixed(2);
     }
+
+
+const navigate = useNavigate()
+
+  
+
+const[first_name,setFirstName] = useState("")
+const[last_name,setLastName] = useState ("")
+
+const handleSubmit =(e) =>{
+      e.preventDefault();
+
+  
+      db.collection('Orders').add({
+          firstName : first_name,
+          lastName : last_name,
+          timestamp: firebase.firestore.FieldValue.serverTimestamp(),
+          
+      })
+
+      setFirstName("")
+      setLastName("");
+
+      navigate('/Complete')
+      
+      
+      
+    }
+
 
     return (
       <div class="cart-container">
@@ -159,17 +185,16 @@ function Cart() {
           
           <img src= "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQulepVqs0LPJ-_3oB_dfMj1u-isynYtAl-2A&usqp=CAU" alt="visa"class="cclogo"></img>
           <div class='form'>
-          <form action= "https://flask-order-app-service.kjt7dv43kepem.us-west-2.cs.amazonlightsail.com/orders" method='post'>
-         
-          <input type="text" name="first_name" id="first_name" class='input-name' placeholder="First Name" required />
-          <input type="text" name="last_name" id="last_name" class='input-name' placeholder="Last Name" required />
+          <form>
+          <input type="text"  value={first_name} onChange={e => setFirstName(e.target.value)}class='input-name' placeholder="First Name" required />
+          <input type="text"  value={last_name} onChange={e => setLastName(e.target.value)}class='input-name' placeholder="Last Name" required />
           <input type="text" name="credit_card" id="credit_card" class='input-cc' placeholder="Credit Card #" required />
           <input type="text" name="CVV" id="CVV" class='input-cvv' placeholder="CVV" required />
           <label class='label'> Card Expiry Date :   </label><input type="month" name="ExpDate" id="ExpDate" class='input-cc' placeholder="Exp Date" required />
           <input type="text" name="Address" id="Address" class='input-email' placeholder="Address" required />
           <input type="text" name="City" id="City" class='input-city' placeholder="City" required />
           
-          <select STYLE="font-size : 12pt"id="state" name="state" class='input-state'>
+          <select STYLE="font-size : 12pt"value="state" name="state" class='input-state'>
                 <option value="AL">Alabama</option>
                 <option value="AK">Alaska</option>
                 <option value="AS">American Samoa</option>
@@ -248,7 +273,7 @@ function Cart() {
           <input type="hidden" name="tax" id="tax" value={fixedPlace((BeefPrice+ChixPrice+BeanPrice+PorkPrice)*0.095)} />
           <input type="hidden" name="total_sale" id="total_sale" value={fixedPlace((BeefPrice+ChixPrice+BeanPrice+PorkPrice)*0.095+ BeefPrice+ChixPrice+BeanPrice+PorkPrice)} />
 
-          <button disabled = {PorkCount+BeefCount+ChixCount+BeanCount===0} type="submit" value="Submit" class= 'button10'>SUBMIT</button>
+          <button disabled = {PorkCount+BeefCount+ChixCount+BeanCount===0} onClick= {handleSubmit} type="submit" class= 'button10'>SUBMIT</button>
           </form>
           </div>
            

@@ -17,6 +17,7 @@ function Navigation() {
         class="Cart"
           alt="/Cart"/>
             </Link></li>
+    <li hidden><Link to= "/Complete"> </Link></li>
         </ul>
       </h1>
     </div>
